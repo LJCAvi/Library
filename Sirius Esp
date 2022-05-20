@@ -219,7 +219,7 @@ function EspLibrary.RemoveEsp(player)
         EspLibrary.espCache[player] = nil
 
         for _, object in next, espCache do
-            object:Remove()
+            object:Destroy()
         end
     end
 end
@@ -234,7 +234,7 @@ function EspLibrary.Unload()
     end
 
     for _, object in next, EspLibrary.drawings do
-        object:Remove()
+        object:Destroy()
     end
 
     runService:UnbindFromRenderStep("esp_rendering")
